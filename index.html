@@ -240,9 +240,11 @@ href="https://tools.ietf.org/html/rfc5234">ABNF</a>:
 The configuration is like this:</p>
 
 <pre><code>&lt;source&gt;
-  type tail
-  format ltsv
-  time_format %d/%b/%Y:%H:%M:%S %z
+  @type tail
+  &lt;parse&gt;
+    @type ltsv
+    time_format %d/%b/%Y:%H:%M:%S %z
+  &lt;/parse&gt;
   path /var/log/nginx/access_log
   pos_file /var/log/nginx/access_log.pos
   tag nginx.access
